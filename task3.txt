@@ -1,0 +1,24 @@
+class book(): 
+    sinif = "bədii-kitab"
+    def __init__(self,name,author,year,page_count):
+        self.name = name
+        self.author = author
+        self.year = year
+        self.page_count = page_count
+
+    def kitab_oxuma(self,kitab_oxuma = False):
+        if kitab_oxuma == True:
+            return f"{self.author}-in {self.name} kitabını oxumuşam"
+        else:
+            return f"{self.author}-in {self.name} kitabını oxumamışam"
+
+George_1984 = book("1984","George Orwell",1947,352)
+Min_mohtesem_gunes = book("Min möhtəşəm günəş","Xalid Hüseyni",2007,456)
+Suc_ceza = book("Cinayət və cəza","Fyodor Dostoyevski",1965,636)
+
+print(f"{George_1984.author} {George_1984.name} kitabını {George_1984.year}-ci ildə yazmışdır,səhifə sayı {George_1984.page_count}-dir.")
+print(f"{Min_mohtesem_gunes.author} {Min_mohtesem_gunes.name} kitabını {Min_mohtesem_gunes.year}-ci ildə yazmışdır,səhifə sayı {Min_mohtesem_gunes.page_count}-dir.") 
+print(f"{Suc_ceza.author} {Suc_ceza.name} kitabını {Suc_ceza.year}-ci ildə yazmışdır,səhifə sayı {Suc_ceza.page_count}-dir.")   
+
+print(f"{George_1984.kitab_oxuma(True)},{Min_mohtesem_gunes.kitab_oxuma(True)}")
+print(Suc_ceza.kitab_oxuma())
