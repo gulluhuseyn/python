@@ -1,0 +1,67 @@
+class das():
+    def __init__(self, reng, movqe):
+        self.reng = reng
+        self.movqe = movqe
+
+    def hereket(self):
+        pass
+
+class Piyada(das):
+    def hereket(self):
+        print(f"{self.reng} piyada {','.join(self.movqe)} mövqesindən bir addım irəli hərəkət edə bilər.")
+
+agPiyada = Piyada("Ağ",["a2","b2","c2","d2","e2","f2","g2","h2"])
+qaraPiyada = Piyada("Qara",["a7","b7","c7","d7","e7","f7","g7","h7"])
+
+# agPiyada.hereket()
+# qaraPiyada.hereket()
+
+class Top(das):
+    def hereket(self):
+        print(f"{self.reng} top {','.join(self.movqe)} mövqesindən şaquli və ya üfuqi olaraq istədiyi qədər kvadrat hərəkət edə bilər.")
+
+agTop = Top("Ağ",["a1","h1"])
+qaraTop = Top("Qara",["a8","h8"])
+
+# agTop.hereket()
+# qaraTop.hereket()
+
+class At(das):
+    def hereket(self):
+        print(f"{self.reng} at {','.join(self.movqe)} mövqesindən L şəklində hərəkət edə bilər.")
+
+agAt = At("Ağ",["b2","g2"])
+qaraAt = At("Qara",["b8","g8"])
+
+# agAt.hereket()
+# qaraAt.hereket()
+
+class Fil(das):
+    def hereket(self):
+        print(f"{self.reng} fil {','.join(self.movqe)} mövqesindən çarpaz olaraq istədiyi qədər kvadrat hərəkət edə bilər.")
+
+agFil = Fil("Ağ",["c1","f1"])
+qaraFil = Fil("Qara",["c8","f8"])
+
+# agFil.hereket()
+# qaraFil.hereket()
+
+class Vezir(das):
+    def hereket(self):
+        print(f"{self.reng} vəzir {self.movqe} mövqesindən şaquli, yatay və ya çapraz olaraq istədiyi qədər kvadrat hərəkət edə bilər.")
+
+agVezir = Vezir("Ağ","d1")
+qaraVezir = Vezir("Qara","d8")
+
+# agVezir.hereket()
+# qaraVezir.hereket()
+
+class Sah(das):
+    def hereket(self):
+        print(f"{self.reng} şah {self.movqe} mövqesindən bir kvadrat hər tərəfə hərəkət edə bilər.")
+
+agSah = Sah("Ağ","e1")
+qaraSah = Sah("Qara","e8")
+
+# agSah.hereket()
+# qaraSah.hereket()
