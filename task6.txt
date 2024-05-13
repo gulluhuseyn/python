@@ -1,0 +1,56 @@
+class Bank_account():
+    def __init__(self,account_number,balance):
+        self.account_number = account_number
+        self.balance = balance
+
+    def increase_balance(self,money):
+        self.balance += int(money)
+        return f"The balance has increased by {money} Azn."
+    
+    def remove_balance(self,money):
+        if money >= self.balance:
+            return "Your balance is insufficient"
+        else:
+            self.balance -= money
+            return f"{money} Azn has been deducted from your balance."
+
+    def show_balance(self):
+        return f"Account number:{self.account_number}\nCurrent balance:{self.balance} Azn."
+
+class Credit(Bank_account):
+    def __init__(self,account_number,balance,credit_money):
+        super().__init__(account_number,balance)
+        self.credit_money = credit_money
+        self.monthly_pay = self.credit_money/12
+    def gived_credit(self):
+        self.balance += self.credit_money
+        return f"You took {self.credit_money} Azn credits.Monthly payment:{self.monthly_pay}."
+        
+    def payment_credit(self,pay_money):
+        if pay_money > self.balance:
+            return "Insufficient funds to pay credit..."
+        elif pay_money < self.monthly_pay:
+            return "The amount is less than the monthly payment..."
+        else:
+            self.balance -= int(pay_money)
+            self.credit_money -= int(pay_money)
+            if self.credit_money != 0:
+                return f"{pay_money} Azn has been paid towards your credit.You have {self.credit_money} payments left."
+            else:
+                return f"The credit is over..."
+    def show_balance(self):
+        return super().show_balance()
+
+bank1 = Bank_account(4213457223435432,500)
+print(bank1.show_balance())
+# print(bank1.increase_balance(200))
+# print(bank1.remove_balance(100))
+# print(bank1.show_balance())
+
+credit1 = Credit(bank1.account_number,bank1.balance,1000)
+print(credit1.gived_credit())
+# print(credit1.payment_credit(400))
+# print(credit1.payment_credit(500))
+# print(credit1.payment_credit(50))
+# print(credit1.payment_credit(100))
+print(credit1.show_balance())
