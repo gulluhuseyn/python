@@ -1,0 +1,10 @@
+import random
+import math
+def hesabla():
+    numbers = []
+    for number in range(5):
+        number = random.randint(20,50)
+        numbers.append(number)
+        new_list = [math.pow(num,2) for num in numbers if num % 2 == 0]
+    return f"{numbers}\n" + f"\n{new_list}"
+print(hesabla())
