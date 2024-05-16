@@ -1,0 +1,6 @@
+with open("File.txt", mode="x", encoding = "utf-8") as data:
+    data.write("Hello world!\nI'm an alien")
+
+with open("File.txt", mode="rt", encoding = "utf-8") as data:
+    with open("NewFile.txt", mode="x", encoding = "utf-8") as newdata:
+        newdata.write(data.readline().upper())
