@@ -1,4 +1,4 @@
-Task 1
+Task1
 import os
 import shutil
 import fnmatch
@@ -18,7 +18,7 @@ for file in os.listdir(search_way):
         sub_way = search_way + '/' + file
         main_way = "Example/" + file
         shutil.move(sub_way,main_way)
-Task 2
+Task2
 def yerleri_tap(xallar, yerler):
     siralanmis_ciftler = sorted(zip(xallar, yerler), reverse=True)
     for index, (xal, yer) in enumerate(siralanmis_ciftler):
