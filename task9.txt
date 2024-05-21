@@ -1,10 +1,10 @@
-Task1
+Task 1
 import os
 import shutil
 import fnmatch
 folder_way = os.getcwd()
 file1 = "cat.txt"
-file2 = "cat.jpg"      #İçərisində olduğum qovluqda mövcuddur
+file2 = "cat.jpg"                   #İçərisində olduğum qovluqda mövcuddur
 try:
     os.makedirs("Example/Subdirect")
 except FileExistsError:
@@ -18,7 +18,7 @@ for file in os.listdir(search_way):
         sub_way = search_way + '/' + file
         main_way = "Example/" + file
         shutil.move(sub_way,main_way)
-Task2
+Task 2
 def yerleri_tap(xallar, yerler):
     siralanmis_ciftler = sorted(zip(xallar, yerler), reverse=True)
     for index, (xal, yer) in enumerate(siralanmis_ciftler):
