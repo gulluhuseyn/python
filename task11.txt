@@ -1,0 +1,45 @@
+import sqlite3
+connection = sqlite3.connect("Products")
+cursor = connection.cursor()
+
+def create_table():
+    cursor.execute("CREATE TABLE IF NOT EXISTS product(name TEXT,product_count INT,product_value INT)")
+    connection.commit()
+# create_table()
+
+def add_data(name,product_count,product_value):
+    cursor.execute("INSERT INTO product VALUES(?, ?, ?)",(name,product_count,product_value))
+    connection.commit()
+count = 0
+try:
+    # count_input = int(input("Ne qeder mehsul daxil edeceyinizi qeyd edin: "))
+    # while count < count_input:
+        # name = input("Məhsulun adını daxil edin: ")
+        # product_count= int(input("Məhsulun sayını daxil edin: "))
+        # product_value = int(input("Məhsulun dəyərini daxil edin: "))
+        # add_data(name, product_count, product_value)
+        count += 1
+except ValueError:
+    print("Düzgün daxil edin!!!")
+
+def show_data():
+    cursor.execute("SELECT * FROM product")
+    data = cursor.fetchall()
+    for row in data:
+        print(row)  
+# show_data()
+
+# product = input("Məhsulun adını daxil edin: ")
+# old_value = input("Köhnə dəyəri daxil edin: ")
+# new_value = input("Yeni dəyəri daxil edin: ")
+def update_product_value(product,old_value,new_value):
+    cursor.execute("UPDATE product SET product_value=? WHERE name = ? AND product_value=?",(new_value,product,old_value))
+    connection.commit()
+# update_product_value(product,old_value,new_value)
+
+# product = input("Silmək istədiyiniz məhsulun adını daxil edin: ")
+def delete_data(product):
+    cursor.execute("DELETE FROM product WHERE name = ?",(product,))
+    connection.commit()
+# delete_data(product)
+connection.close()
